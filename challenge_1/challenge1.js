@@ -5,6 +5,7 @@
 
 var saveButton = $('#save-button');
 var loadButton = $('#load-button');
+var clearButton = $('#clear-button');
 localStorage.testText = "test";
 
 /**
@@ -37,4 +38,8 @@ saveButton.click(function(){
 */
 loadButton.click(function(){
 	setText(localStorage.getItem('testText'));
+})
+
+clearButton.click(function(){
+	setText("");
 })

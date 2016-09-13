@@ -27,16 +27,14 @@ function setText(text) {
 /*
 * When user clicks the save button, saves text from text area save-me in memory, localStorage.testText. 
 */
-function saveText(){
+saveButton.click(function(){
 	localStorage.setItem('testText', getText());
 	alert("data saved: " + localStorage.getItem('testText'));
-}
+});
 
 /*
 * When user clicks the load button, the value stored in memory, localStorage.testText is diplayed in the text area save-me.
 */
-function loadText(){
+loadButton.click(function(){
 	setText(localStorage.getItem('testText'));
-}
-
-
+})

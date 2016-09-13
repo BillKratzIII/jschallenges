@@ -1,3 +1,10 @@
+<!--William Kratz
+9/13/16
+Page has a text area and two buttons. If the user clickes save, the text in the text area will be saved to memory. If the user clicks load, the last text saved in memory will show in the text area.
+-->
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +14,7 @@
       display: none;
     }
   </style>
+
 </head>
 <body>
   <h1>save the text!</h1>
@@ -14,6 +22,7 @@
     <div><textarea id="save-me" style="width:500px;height:200px;"></textarea></div>
     <div><button id="save-button" onclick="saveText()">Save</button> <button id="load-button" onclick="loadText()">Load</button>
   </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="challenge1.js"></script>
 </body>
 </html>

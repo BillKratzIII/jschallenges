@@ -1,14 +1,10 @@
 /**
- * Using the LocalStorage API, save the contents of the text box
- * when users click the "save" button. 
- * Load the saved text when users click the "Load" button.
- *
- * Here's the documentation you need:
- * https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+ * William Kratz
+ *9/13/16
  */
 
-var saveButton = document.getElementById('#save-button');
-var loadButton = document.getElementById('#load-button');
+var saveButton = $('#save-button');
+var loadButton = $('#load-button');
 localStorage.testText = "test";
 
 /**
@@ -16,7 +12,7 @@ localStorage.testText = "test";
  * @return {String}
  */
 function getText() {
-  return document.getElementById("save-me").value;
+  return $('#save-me').val();
 }
 
 /**
@@ -24,17 +20,23 @@ function getText() {
  * @param {String} text the stuff you want to put in the box
  */
 function setText(text) {
-  return document.getElementById('#save-me').val(text);
+  return $('#save-me').val(text);
   
 }
 
+/*
+* When user clicks the save button, saves text from text area save-me in memory, localStorage.testText. 
+*/
 function saveText(){
 	localStorage.setItem('testText', getText());
 	alert("data saved: " + localStorage.getItem('testText'));
 }
 
+/*
+* When user clicks the load button, the value stored in memory, localStorage.testText is diplayed in the text area save-me.
+*/
 function loadText(){
-	document.getElementById("save-me").value = localStorage.getItem('testText');
+	setText(localStorage.getItem('testText'));
 }
 
 

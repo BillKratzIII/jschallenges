@@ -15,14 +15,18 @@
 	var resetCounter = 0;
 	var teamOneHits = 0;
 	var teamTwoHits = 0;
+	var shootAudio = new Audio('hockeystick.mp3');
+	var goalAudio = new Audio('Vanc2.mp3');
  	
  	//when clicked, the counter goes up by one. If the result of the random number is 1 then the goal goes up by one and the back
  	//ground color changes to the team's color.
-	shootButtonOne.click(function(){ 		
+	shootButtonOne.click(function(){ 
+		shootAudio.play();		
  		counter1++;
  		$('#teamone-numshots').html(counter1);
  		var result = getRandomIntInclusive();
  		if(result==1){
+ 			goalAudio.play();
  			$('body').css("background-color","red");
  			alert("GOAAAALLLLL!!!!");
  			teamOneHits++;
@@ -33,11 +37,13 @@
  	});
 
 	//same functionality as team one's shoot button
- 	shootButtonTwo.click(function(){ 		
+ 	shootButtonTwo.click(function(){ 
+ 		shootAudio.play();		
  		counter2++;
  		$('#teamtwo-numshots').html(counter2);
  		var result = getRandomIntInclusive();
  		if(result==1){
+ 			goalAudio.play();
  			$('body').css("background-color","blue");
  			alert("GOAAAALLLLL!!!!");
  			teamTwoHits++;
